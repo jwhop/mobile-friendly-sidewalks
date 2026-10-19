@@ -1,1 +1,0 @@
-export{t as WebGPURenderer}from"../nodes/2.BJb1sDZq.js";

@@ -42,6 +42,12 @@
 </div>
 
 <style>
+    .mainViewContainer {
+        width: 100%;
+        max-width: 1280px;
+        height: 100%;
+        overflow: hidden;
+    }
     .mainViewImage {
         width: 100%;
         max-width: 1280px;
