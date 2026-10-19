@@ -1,0 +1,1 @@
+export{r as CanvasRenderer}from"../nodes/2.BJb1sDZq.js";
