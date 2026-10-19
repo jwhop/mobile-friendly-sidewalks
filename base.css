@@ -23,20 +23,6 @@ section {
     align-items: center;
 }
 
-.mainViewContainer {
-    width: 100%;
-    max-width: 1280px;
-    height: 100%;
-    overflow: hidden;
-}
-
-.mainViewImage {
-    width: 100%;
-    max-width: 1280px;
-    overflow: hidden;
-    object-fit: contain;
-}
-
 html, body {
     height: 100%;
     margin: 0;
