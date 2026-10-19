@@ -1,0 +1,45 @@
+:root {
+    --parent-section-padding: clamp(3.75rem, 7.3vw, 6.25rem) 16px clamp(3.75rem, 7.3vw, 6.25rem) 16px;
+    height: 100%;
+
+}
+
+@media (min-width: 0rem) {
+  /* … */
+}
+
+section {
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mainViewContainer {
+    width: 100%;
+    max-width: 1280px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.mainViewImage {
+    width: 100%;
+    max-width: 1280px;
+    overflow: hidden;
+    object-fit: contain;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
