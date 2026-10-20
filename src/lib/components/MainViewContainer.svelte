@@ -10,16 +10,23 @@
 
     onMount(() => {
         console.log("mounting");
+        
         function onResize() {
             console.log("resizing");
+
             _imgWidth = _mainViewImage?.clientWidth as number;
             _imgHeight = _mainViewImage?.clientHeight as number;
-            //_pixiRenderer?.resize();
+
+            console.log(_mainViewImage?.width)
+            _pixiRenderer?.resize();
         }
+
         window.addEventListener('resize', onResize);
-        _imgWidth = _mainViewImage?.clientWidth as number;
-        _imgHeight = _mainViewImage?.clientHeight as number;
-        return () => window.removeEventListener('resize', onResize);
+
+        return () => {
+            window.removeEventListener('resize', onResize);
+            window.removeEventListener('orientationchange', onResize);
+        }
     });
 
     export function getWidth(){
@@ -37,6 +44,7 @@
 
 <div class="mainViewContainer">
     <PixiRenderer bind:this={_pixiRenderer} width = {_imgWidth} height = {_imgHeight} ></PixiRenderer>
+
     <img bind:this={_mainViewImage} class="mainViewImage" src="https://jwhop.github.io/Hallway/assets/test1.jpg" onload={imageLoaded} alt= "placeholder"/>
     
 </div>
@@ -44,14 +52,12 @@
 <style>
     .mainViewContainer {
         width: 100%;
-        max-width: 1280px;
         height: 100%;
         overflow: hidden;
     }
     .mainViewImage {
-        width: 100%;
-        max-width: 1280px;
         height: 100%;
-        overflow: hidden;
+        max-width: 100dvw;
+        object-fit: contain;
     }
 </style>

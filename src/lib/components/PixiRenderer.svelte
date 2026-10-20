@@ -17,7 +17,7 @@
             backgroundColor: 0x00ff00,    // Background color
             backgroundAlpha: 1,           // Background alpha
             antialias: true,              // Enable antialiasing
-            resolution: 1,                // Resolution / device pixel ratio
+            resolution: 2,                // Resolution / device pixel ratio
             preference: 'webgl',          // or 'webgpu' // Renderer preference
             clearBeforeRender: false,      // so that we can render three.js too
             canvas: canvas,
@@ -66,9 +66,8 @@
     
     export function resize(){
         console.log("resizing2");
-        console.log(width)
-        pixiApp.renderer.resize(693, height)
-        //fit(false, pixiApp.stage, width, height, 1280, 720)
+        pixiApp.renderer.resize(width, height)
+        fit(false, pixiApp.stage, width, height, 512 * width/height, 512 * height/width)
     }
    
     function fit(center: boolean, stage: Container, screenWidth: number, screenHeight: number, virtualWidth: number, virtualHeight: number) {
@@ -102,7 +101,7 @@
 
 </script>
 
-<canvas  class="canvas" style:width="{width}px" style:height="{height}px">
+<canvas  bind:this={canvas} class="canvas" style:width="{width}px" style:height="{height}px">
 </canvas>
 
 <style>
